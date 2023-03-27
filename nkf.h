@@ -17,6 +17,7 @@
 #include <io.h>
 #undef  OVERWRITE
 #define DEFAULT_CODE_SJIS
+#define DEFAULT_NEWLINE 0x0D0A
 #define __time_t_defined
 #define __clock_t_defined
 typedef unsigned short wint_t;
@@ -31,8 +32,8 @@ typedef unsigned short wint_t;
 #define X0201_DEFAULT TRUE
 #endif
 
-#if DEFAULT_NEWLINE == 0x0D0A
-#elif DEFAULT_NEWLINE == 0x0D
+#if defined(DEFAULT_NEWLINE) && DEFAULT_NEWLINE == 0x0D0A
+#elif defined(DEFAULT_NEWLINE) && DEFAULT_NEWLINE == 0x0D
 #else
 #define DEFAULT_NEWLINE 0x0A
 #endif
