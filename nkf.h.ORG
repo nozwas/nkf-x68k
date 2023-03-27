@@ -4,23 +4,8 @@
  * 
  */
 
-/* modified for x68k (2023/3/24 nozwas) */
-
 #ifndef NKF_H
 #define NKF_H
-
-#ifdef __XDEV68K__
-#include <stdlib.h>
-#include <stdio.h>
-#include <stddef.h>
-#include <stat.h>
-#include <io.h>
-#undef  OVERWRITE
-#define DEFAULT_CODE_SJIS
-#define __time_t_defined
-#define __clock_t_defined
-typedef unsigned short wint_t;
-#endif
 
 /* Wrapper of configurations */
 
@@ -31,8 +16,8 @@ typedef unsigned short wint_t;
 #define X0201_DEFAULT TRUE
 #endif
 
-#if DEFAULT_NEWLINE == 0x0D0A
-#elif DEFAULT_NEWLINE == 0x0D
+#if defined(DEFAULT_NEWLINE) && DEFAULT_NEWLINE == 0x0D0A
+#elif defined(DEFAULT_NEWLINE) && DEFAULT_NEWLINE == 0x0D
 #else
 #define DEFAULT_NEWLINE 0x0A
 #endif
