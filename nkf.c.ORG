@@ -7040,11 +7040,7 @@ main(int argc, char **argv)
 #ifdef CHECK_OPTION
 	    iconv_for_check = 0;
 #endif
-#ifdef __XDEV68K__
-	    if ((fin = fopen((origfname = *argv++), "rb")) == NULL) {
-#else
 	    if ((fin = fopen((origfname = *argv++), "r")) == NULL) {
-#endif
 		perror(*(argv-1));
 		is_argument_error = TRUE;
 		continue;
@@ -7097,11 +7093,7 @@ main(int argc, char **argv)
 			outfname = "nkf.out";
 		    }
 
-#ifdef __XDEV68K__
-		    if(freopen(outfname, "wb", stdout) == NULL) {
-#else
 		    if(freopen(outfname, "w", stdout) == NULL) {
-#endif
 			perror (outfname);
 			return (-1);
 		    }

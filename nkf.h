@@ -17,7 +17,6 @@
 #include <io.h>
 #undef  OVERWRITE
 #define DEFAULT_CODE_SJIS
-#define DEFAULT_NEWLINE 0x0D0A
 #define __time_t_defined
 #define __clock_t_defined
 typedef unsigned short wint_t;
