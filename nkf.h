@@ -96,6 +96,8 @@ void  setbinmode(FILE *fp)
 #else /* Microsoft C, Turbo C */
 #define setbinmode(fp) setmode(fileno(fp), O_BINARY)
 #endif
+#elif defined(__XDEV68K__)
+#define setbinmode(fp) setmode(fileno(fp), O_BINARY)
 #else /* UNIX */
 #define setbinmode(fp) (void)(fp)
 #endif

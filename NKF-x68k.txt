@@ -1,18 +1,18 @@
 NKF for X68K
 
-NKF (https://github.com/nurse/nkf) をX68K用にコンパイルしました。
-コンパイルには xdev68k (https://github.com/yosshin4004/xdev68k) が必要です。
-make コマンドで実行ファイル nkf.x が生成されます。
+NKF (https://github.com/nurse/nkf) ��X68K�p�ɃR���p�C�����܂����B
+�R���p�C���ɂ� xdev68k (https://github.com/yosshin4004/xdev68k) ���K�v�ł��B
+make �R�}���h�Ŏ��s�t�@�C�� nkf.x ����������܂��B
 
-UTF-8 から Shift JIS への変換は、
+UTF-8 ���� Shift JIS �ւ̕ϊ��́A
 
-    > nkf -O -sxLw 入力ファイル 出力ファイル
+    nkf -O -sxLw ���̓t�@�C�� �o�̓t�@�C��
 
-Shift JIS から UTF-8 への変換は、
+Shift JIS ���� UTF-8 �ւ̕ϊ��́A
 
-    > nkf -O -wxLu 入力ファイル 出力ファイル
+    nkf -O -wxLu ���̓t�@�C�� �o�̓t�@�C��
 
-のように実行してください。
+�̂悤�Ɏ��s���Ă��������B
 
 ------------------------------------------------------------------------------
 Usage:  nkf -[flags] [--] [in file] .. [out file for -O flag]
