@@ -15,7 +15,7 @@
 #include <stddef.h>
 #include <stat.h>
 #include <io.h>
-#undef  OVERWRITE
+//#undef  OVERWRITE
 #define DEFAULT_CODE_SJIS
 #define __time_t_defined
 #define __clock_t_defined
@@ -122,9 +122,13 @@ void  setbinmode(FILE *fp)
 #if defined(__EMX__)
 #include <sys/types.h>
 #endif
+#if !defined(__XDEV68K__)
 #include <sys/stat.h>
+#endif
 #if !defined(MSDOS) || defined(__DJGPP__) /* UNIX, djgpp */
+#if !defined(__XDEV68K__)
 #include <unistd.h>
+#endif
 #if defined(__WATCOMC__)
 #include <sys/utime.h>
 #else

@@ -7062,7 +7062,7 @@ main(int argc, char **argv)
 					  + strlen(".nkftmpXXXXXX")
 					  + 1);
 			strcpy(outfname, origfname);
-#ifdef MSDOS
+#if defined(MSDOS) || defined(__XDEV68K__)
 			{
 			    int i;
 			    for (i = strlen(outfname); i; --i){
@@ -7170,7 +7170,7 @@ main(int argc, char **argv)
 		    }
 		    if(backup_f){
 			char *backup_filename = get_backup_filename(backup_suffix, origfname);
-#ifdef MSDOS
+#if defined(MSDOS) || defined(__XDEV68K__)
 			unlink(backup_filename);
 #endif
 			if (rename(origfname, backup_filename)) {
@@ -7180,7 +7180,7 @@ main(int argc, char **argv)
 			}
 			nkf_xfree(backup_filename);
 		    }else{
-#ifdef MSDOS
+#if defined(MSDOS) || defined(__XDEV68K__)
 			if (unlink(origfname)){
 			    perror(origfname);
 			}
